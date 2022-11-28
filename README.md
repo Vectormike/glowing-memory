@@ -34,6 +34,10 @@ This makes an authorized user to be able to move monetary alue from its accounts
 
 Since we have the monetary value stored in an account, the user can decided to withdraw to a physical bank account.
 
+## Database Schema
+
+The image below is an full representation of the database schema.
+
 ![Database Schema](dbdiagram.png)
 
 ### API Endpoints
@@ -70,25 +74,22 @@ PAYSTACK_SECRET_KEY=
 PAYSTACK_PUBLIC_KEY=
 ```
 
-Clone the repo:
+## Project Structure
 
-```bash
-git clone https://github.com/Vectormike/glowing-memory lendsqr
-cd lendsqr
 ```
+src\
+ |--config\         # Environment variables and configuration related things
+ |--controllers\    # Route controllers (controller layer)
+ |--middlewares\    # Custom express middlewares
+ |--models\         # Mongoose models (data layer)
+ |--routes\         # Routes
+ |--services\       # Business logic (service layer)
+ |--utilities\          # Utility classes and functions
+ |--validations\    # Request data validation schemas
+ |--interfaces\      # Interfaces
+ |--server.ts       # App entry point
+ |--knexfile.ts      # Knex config environment
 
-Install the dependencies:
-
-```bash
-npm install
-```
-
-Set the environment variables:
-
-```bash
-cp .env.example .env
-
-# open .env and modify the environment variables (if needed)
 ```
 
 ## Commands
