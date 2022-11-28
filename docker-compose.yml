@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:    
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8889:8889
+    
+  lendsqr:
+    image: lendsqr
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - phpmyadmin
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - DB_HOST=127.0.0.1
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=lendsqr
+      - DB_PORT=8889
+      - DB_DIALECT=mysql
+      - JWT_AUTH_SECRET=secret
+      - ACCESSTOKENEXPIRESMINUTES=60
+      - REFRESHTOKENEXPIRESDAYS=7
+    
+    networks:
+      - node-network
+
+volumes:
+  db_data:
+
+networks:
+  node-network:
+    driver: bridge
+
+      
