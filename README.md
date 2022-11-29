@@ -3,7 +3,7 @@
 #### **Submission Links**
 
 - Postman Documentation: [Click Here](https://documenter.getpostman.com/view/5622145/2s8YsxvBW7)
-- API Production Link: [Click here](https://lendsqrvectormike.herokuapp.com/lendsqr)
+- API Production Link: [Click here](https://victor-jonah-lendsqr-be-test.herokuapp.com/lendsqr)
 - Github Repository: [Click here](https://github.com/Vectormike/glowing-memory)
 
 ---
